@@ -9,7 +9,6 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.list = @list
     flash[:notice] = @reservation.errors.full_messages.to_sentence unless @reservation.save
     redirect_to offers_path
   end
@@ -30,7 +29,7 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:total_price, :start_date, :end_date, :offer_id, :user_id)
+    params.require(:reservations).permit(:total_price, :start_date, :end_date, :offer_id, :user_id)
   end
 
 end
