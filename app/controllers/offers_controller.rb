@@ -34,6 +34,7 @@ class OffersController < ApplicationController
   # end
 
   # def destroy
+  #   @offer = Offer.find(params[:id])
   #   @offer.destroy
   #   redirect_to root_path
   # end
@@ -41,6 +42,6 @@ class OffersController < ApplicationController
   # private
 
   # def offer_params
-  #   params.require(:offer).permit(:name, :photo, :price, :age, :description, :species )
+  #   params.require(:offers).permit(:name, :photo, :price, :age, :description, :species )
   # end
 end
