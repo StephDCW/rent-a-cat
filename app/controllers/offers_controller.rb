@@ -14,7 +14,7 @@ class OffersController < ApplicationController
 
   # def create
   #   @offer = Offer.new(offer_params)
-  #   # @offer.user_id = @offer
+  #   @offer.user_id = @offer
   #   if @offer.save
   #     redirect_to offer_path(@offer)
   #   else
@@ -34,7 +34,6 @@ class OffersController < ApplicationController
   # end
 
   # def destroy
-  #   @offer = Offer.find(params[:id])
   #   @offer.destroy
   #   redirect_to root_path
   # end
