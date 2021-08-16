@@ -1,26 +1,26 @@
 class OffersController < ApplicationController
-  # def index
-  #   @offers = Offer.all
-  # end
+  def index
+    @offers = Offer.all
+  end
 
-  # def show
-  #   @offer = Offer.find(params[:id])
+  def show
+    @offer = Offer.find(params[:id])
 
-  # end
+  end
 
-  # def new
-  #   @offer = Offer.new
-  # end
+  def new
+    @offer = Offer.new
+  end
 
-  # def create
-  #   @offer = Offer.new(offer_params)
-  #   @offer.user_id = @offer
-  #   if @offer.save
-  #     redirect_to offer_path(@offer)
-  #   else
-  #     render :new
-  #   end
-  # end
+  def create
+    @offer = Offer.new(offer_params)
+    @offer.user_id = @offer
+    if @offer.save
+      redirect_to offer_path(@offer)
+    else
+      render :new
+    end
+  end
 
 
   # def update
@@ -31,17 +31,17 @@ class OffersController < ApplicationController
   #     render 'show'
   #   end
 
-  # end
+  end
 
-  # def destroy
-  #   @offer = Offer.find(params[:id])
-  #   @offer.destroy
-  #   redirect_to root_path
-  # end
+  def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+    redirect_to root_path
+  end
 
-  # private
+  private
 
-  # def offer_params
-  #   params.require(:offers).permit(:name, :photo, :price, :age, :description, :species )
-  # end
+  def offer_params
+    params.require(:offers).permit(:name, :price, :age, :description, :species )
+  end
 end
