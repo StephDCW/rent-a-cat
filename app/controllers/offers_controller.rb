@@ -34,6 +34,7 @@ class OffersController < ApplicationController
   # end
 
   # def destroy
+  #   @offer = Offer.find(params[:id])
   #   @offer.destroy
   #   redirect_to root_path
   # end
