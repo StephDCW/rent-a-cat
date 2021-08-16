@@ -1,4 +1,4 @@
 class Offer < ApplicationRecord
-  belong_to :user
-  validates :name, :age, :photo, :specie, :description, presence: true, uniqueness: true
+  belongs_to :user, dependent: :destroy
+  validates :name, :age, :photo, :race, :description, :location, presence: true
 end
