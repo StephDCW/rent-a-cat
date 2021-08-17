@@ -1,7 +1,11 @@
 class OffersController < ApplicationController
   def index
     @offers = policy_scope(Offer).order(created_at: :desc)
-    @offers = Offer.all
+    if params[:search]
+      @offers = @offers.where(location: params[:search][:query].downcase)
+    else
+      @offers
+    end
   end
 
   def show
@@ -16,6 +20,7 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    @offer.location = @offer.location.downcase
     @offer.user = current_user
     authorize @offer
     if @offer.save
@@ -50,6 +55,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:name, :price, :age, :description, :species )
+    params.require(:offer).permit(:name, :price, :age, :description, :race, :location )
   end
 end

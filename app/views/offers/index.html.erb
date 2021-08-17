@@ -1,0 +1,58 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1487300001871-12053913095d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fGNhdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);">
+  <div class="container">
+    <h1>Le chat ronronne <strong>le present</strong>. Le <strong>chat</strong> est toujours dans l'aujourd'hui</h1>
+    <p>Find a cat today!!!</p>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Cats</h1>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @offers.count %> offers out of our <%= Offer.count %> on our website.</p>
+      <% else %>
+        <p>All <%= Offer.count %> offers.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @offers.each do |offer| %>
+      <div class="col-4">
+        <div class="offer-card">
+          <div class="offer-card-image" style="background-image: url('<% offer %>')"></div>
+          <div class="offer-card-content">
+            <div class="offer-card-title">
+              <h4><%= offer.name %></h4>
+            </div>
+            <p><%= offer.location %></p>
+            <div class="flex">
+              <%# <div class="flex">
+                <i class="material-icons mr-2">people</i><span><%= offer.number_of_guests %></span>
+              </div> %>
+              <div class="flex ml-3">
+                <i class="material-icons mr-2">euro_symbol</i> <%= offer.price %>
+              </div>
+            </div>
+          </div>
+          <div class="offer-card-actions">
+            <%= link_to 'More info', offer_path(offer) %>
+            <%= link_to 'Edit', edit_offer_path(offer), class: 'ml-3 text-warning' %>
+            <%= link_to "Remove", offer_path(offer),
+                method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: 'ml-3 text-danger'
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
