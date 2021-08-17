@@ -3,8 +3,6 @@ class OffersController < ApplicationController
     @offers = policy_scope(Offer).order(created_at: :desc)
     if params[:search]
       @offers = @offers.where(location: params[:search][:query].downcase)
-    else
-      @offers
     end
   end
 
