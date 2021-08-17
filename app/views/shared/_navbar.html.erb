@@ -13,6 +13,10 @@
       <% if user_signed_in? %>
         <li class="nav-item active">
           <%= link_to "Login", "#", class: "nav-link" %>
+        <span class="nav-link"><%= current_user.email %></span>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Home", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Sign in", "#", class: "nav-link" %>
