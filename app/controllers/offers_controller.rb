@@ -5,7 +5,6 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
-
   end
 
   def new
@@ -22,15 +21,13 @@ class OffersController < ApplicationController
     end
   end
 
-
-  # def update
-  #   @offer = Offer.find(params[:id])
-  #   if @offer.update_attributes(offer_params)
-  #     redirect_to offer_path(@offer)
-  #   else
-  #     render 'show'
-  #   end
-
+  def update
+    @offer = Offer.find(params[:id])
+    if @offer.update(offer_params)
+      redirect_to offer_path(@offer)
+    else
+      render 'show'
+    end
   end
 
   def destroy
@@ -42,6 +39,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offers).permit(:name, :price, :age, :description, :species )
+    params.require(:offer).permit(:name, :price, :age, :description, :species )
   end
 end
