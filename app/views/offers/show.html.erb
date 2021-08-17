@@ -1,4 +1,4 @@
-<div class="map" style="background-image: url('<%= @offer.photo %>')"></div>
+<%# <div class="map" style="background-image: url('<%= @offer.photo %>')"></div> %>
 
 <div class="container margin-top-negative">
   <div class="row">
@@ -10,7 +10,7 @@
       <div class="offer-show-card">
         <h3>A bit more about this offer...</h3>
         <p><%= @offer.description %></p>
-        <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @offer.address %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @offer.address %>&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>
+        <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @offer.location %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @offer.location %>&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>
       </div>
     </div>
 

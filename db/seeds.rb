@@ -8,7 +8,7 @@
 require 'faker'
 
 User.destroy_all
-Offer.destroy_all
+
 
 50.times do
   User.create(email: Faker::Internet.unique.email,

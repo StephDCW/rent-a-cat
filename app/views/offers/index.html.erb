@@ -27,18 +27,18 @@
     <% @offers.each do |offer| %>
       <div class="col-4">
         <div class="offer-card">
-          <div class="offer-card-image" style="background-image: url('<%= offer.picture_url %>')"></div>
+          <div class="offer-card-image" style="background-image: url('<% offer %>')"></div>
           <div class="offer-card-content">
             <div class="offer-card-title">
               <h4><%= offer.name %></h4>
             </div>
-            <p><%= offer.address %></p>
+            <p><%= offer.location %></p>
             <div class="flex">
               <%# <div class="flex">
                 <i class="material-icons mr-2">people</i><span><%= offer.number_of_guests %></span>
               </div> %>
               <div class="flex ml-3">
-                <i class="material-icons mr-2">euro_symbol</i> <%= offer.price_per_night %>
+                <i class="material-icons mr-2">euro_symbol</i> <%= offer.price %>
               </div>
             </div>
           </div>
