@@ -8,5 +8,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, uniqueness: true, presence: true
-  validates :first_name, :last_name, :photo, presence: true
+  validates :first_name, :last_name, :photo, :location, presence: true
 end
