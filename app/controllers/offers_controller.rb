@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   def index
     @offers = policy_scope(Offer).order(created_at: :desc)
     if params[:search]
-      @offers = @offers.where(location: params[:search][:query].downcase)
+      @offers = @offers.where(location: params[:search][:query])
     else
       @offers
     end

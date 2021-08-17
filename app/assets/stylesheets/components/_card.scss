@@ -59,3 +59,8 @@
   justify-content: space-between;
   margin-bottom: 30px;
 }
+.cat-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
