@@ -1,3 +1,6 @@
 class Reservation < ApplicationRecord
-  validates :total_price, :start_date, :end_date, presence: true
+  has_one :offer, :user
+
+  validates :start_date, :end_date, :user_id, :offer_id, presence: true
+  validates :total_price, numericality: true, presence: true
 end
