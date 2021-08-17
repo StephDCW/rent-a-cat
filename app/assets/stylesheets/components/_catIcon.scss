@@ -1,0 +1,115 @@
+.paw-icon {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.circle {
+  position: relative;
+  /*円の横幅*/
+  width: 120px;
+  /**円の縦幅*/
+  height: 120px;
+  /**角のまるさ*/
+  border-radius: 50%;
+  background: white; /*背景色*/
+  /**テキストを中心に*/
+  text-align: center;
+  /*文字の高さ:hightとあわせる*/
+  line-height: 120px;
+  /**塗りつぶしじゃなくて線にする*/
+  border: solid 3px darkgray;
+  margin-left: auto;
+  margin-right: auto;
+  /**アニメーション*/
+  animation: Flash 2s infinite;
+}
+
+.paw {
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.paw:hover {
+  animation: kaiten 1.5s linear 1;
+}
+.paw-center {
+  position: absolute;
+  z-index: 999;
+  width: 30%;
+  height: 50%;
+  border-radius: 50px;
+  background: rgb(170, 64, 64);
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+}
+.paw-bottom {
+  z-index: 998;
+  position: absolute;
+  width: 65%;
+  height: 35%;
+  border-radius: 70px;
+  background: rgb(170, 64, 64);
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+}
+.nikukyu1,
+.nikukyu2,
+.nikukyu3,
+.nikukyu4 {
+  z-index: 1000;
+  /*円の横幅*/
+  width: 20px;
+  /**円の縦幅*/
+  height: 25px;
+  /**角のまるさ*/
+  border-radius: 50%;
+  background: rgb(170, 64, 64); /*背景色*/
+  margin-left: auto;
+  margin-right: auto;
+}
+.nikukyu1 {
+  position: absolute;
+  transform: rotate(-35deg);
+  top: 30%;
+  left: 8%;
+}
+.nikukyu2 {
+  transform: rotate(-10deg);
+  position: absolute;
+  top: 12%;
+  left: 28%;
+}
+.nikukyu3 {
+  transform: rotate(10deg);
+  position: absolute;
+  top: 12%;
+  right: 28%;
+}
+.nikukyu4 {
+  transform: rotate(35deg);
+  position: absolute;
+  top: 30%;
+  right: 8%;
+}
+/* アニメーション */
+@keyframes Flash {
+  50% {
+    box-shadow: 0px 0px 10px 0px rgb(170, 64, 64);
+  }
+}
+
+@keyframes kaiten {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
