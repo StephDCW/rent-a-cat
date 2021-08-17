@@ -14,12 +14,12 @@
 </div>
 
   <div class="row">
-    <div class="col ml-3">
+    <div class="col ml-3 mr-3 d-flex justify-content-between">
       <% if @query %>
         <p>You searched for <strong><%= @query %></strong>. We found <%= @offers.count %> offers out of our <%= Offer.count %> on our website.</p>
       <% else %>
         <p>All <%= @offers.count %> offers.  </p>
-        <%= link_to "Return to the search", root_path %>
+        <p><%= link_to "Return to the search", root_path %></p>
       <% end %>
     </div>
   </div>
