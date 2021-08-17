@@ -23,7 +23,7 @@ class OffersController < ApplicationController
 
   def update
     @offer = Offer.find(params[:id])
-    if @offer.update_attributes(offer_params)
+    if @offer.update(offer_params)
       redirect_to offer_path(@offer)
     else
       render 'show'
