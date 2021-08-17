@@ -14,45 +14,43 @@
 </div>
 
   <div class="row">
-    <div class="col">
+    <div class="col ml-3 mr-3 d-flex justify-content-between">
       <% if @query %>
         <p>You searched for <strong><%= @query %></strong>. We found <%= @offers.count %> offers out of our <%= Offer.count %> on our website.</p>
       <% else %>
-        <p>All <%= @offers.count %> offers.</p>
+        <p>All <%= @offers.count %> offers.  </p>
+        <p><%= link_to "Return to the search", root_path %></p>
       <% end %>
     </div>
   </div>
 
-  <div class="row">
+  <div class="cat-card">
     <% @offers.each do |offer| %>
-      <div class="col-4">
-        <div class="offer-card">
-          <div class="offer-card-image" style="background-image: url('<% offer %>')"></div>
-          <div class="offer-card-content">
-            <div class="offer-card-title">
-              <h4><%= offer.name %></h4>
-            </div>
-            <p><%= offer.location %></p>
-            <div class="flex">
-              <%# <div class="flex">
-                <i class="material-icons mr-2">people</i><span><%= offer.number_of_guests %></span>
-              </div> %>
-              <div class="flex ml-3">
-                <i class="material-icons mr-2">euro_symbol</i> <%= offer.price %>
+      <%# <div class="col-4"> %>
+        <div class="offer-card ml-3">
+          <div class="offer-card-image" style="background-image: url('<% offer %>')">
+            <div class="offer-card-content">
+              <div class="offer-card-title">
+                <h4><%= offer.name %></h4>
+              </div>
+              <p><%= offer.location %></p>
+              <%# <div class="flex"> %>
+                <div class="flex ml-3">
+                  <i class="material-icons mr-2">euro_symbol</i> <%= offer.price %>
+                </div>
+              <%# </div> %>
+              <div class="offer-card-actions">
+                <%= link_to 'More info', offer_path(offer) %>
+                <%= link_to 'Edit', edit_offer_path(offer), class: 'ml-3 text-warning' %>
+                <%= link_to "Remove", offer_path(offer),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" },
+                    class: 'ml-3 text-danger'
+                %>
               </div>
             </div>
           </div>
-          <div class="offer-card-actions">
-            <%= link_to 'More info', offer_path(offer) %>
-            <%= link_to 'Edit', edit_offer_path(offer), class: 'ml-3 text-warning' %>
-            <%= link_to "Remove", offer_path(offer),
-                method: :delete,
-                data: { confirm: "Are you sure?" },
-                class: 'ml-3 text-danger'
-            %>
-          </div>
         </div>
-      </div>
+      <%# </div> %>
     <% end %>
   </div>
-</div>
