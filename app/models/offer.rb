@@ -1,4 +1,6 @@
 class Offer < ApplicationRecord
   belongs_to :user, dependent: :destroy
-  validates :name, :age, :photo, :race, :description, :location, presence: true
+  has_many :reservations
+  validates :name, :age, :race, :description, :location, :user_id, presence: true
+  validates :price, numericality: true, presence: true
 end
