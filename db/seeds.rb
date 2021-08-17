@@ -7,8 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Offer.destroy_all
 User.destroy_all
 
+User.create!(email: "test@test.com",
+              password: '123456',
+              password_confirmation: '123456',
+              first_name: Faker::Name.first_name,
+              last_name: Faker::Name.last_name)
 
 50.times do
   User.create(email: Faker::Internet.unique.email,
@@ -19,21 +25,21 @@ User.destroy_all
 end
 
 25.times do
-  Offer.create!(name: Faker::Creature::Cat.unique.name,
+  Offer.create!(name: Faker::Creature::Cat.name,
                 age: rand(0..25),
                 price: rand(2..200),
                 race: Faker::Creature::Cat.breed,
-                description: Faker::TvShows::MichaelScott.unique.quote,
-                location: 'Paris',
-                user_id: rand(17..50))
+                description: Faker::TvShows::MichaelScott.quote,
+                location: 'paris',
+                user_id: User.all.pluck(:id).sample)
 end
 
 25.times do
-  Offer.create!(name: Faker::Creature::Cat.unique.name,
+  Offer.create!(name: Faker::Creature::Cat.name,
                 age: rand(0..25),
                 price: rand(2..200),
                 race: Faker::Creature::Cat.breed,
-                description: Faker::TvShows::HowIMetYourMother.unique.quote,
-                location: 'Paris',
-                user_id: rand(17..50))
+                description: Faker::TvShows::HowIMetYourMother.quote,
+                location: 'paris',
+                user_id: User.all.pluck(:id).sample)
 end
