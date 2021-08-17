@@ -1,0 +1,10 @@
+
+<%= simple_form_for @offer do |o| %>
+  <%= o.input :name, placeholder: "Write the cat name here" %>
+  <%= o.input :race, placeholder: "Write the cat race here" %>
+  <%= o.input :age, placeholder: "Write the cat age here" %>
+  <%= o.input :location, placeholder: "Write the cat city here" %>
+  <%= o.input :description, placeholder: "Write the cat description here" %>
+  <%= o.input :price, placeholder: "Write the price here" %>
+  <%= l.submit "Add", class: "btn btn-primary" %>
+<% end %>
