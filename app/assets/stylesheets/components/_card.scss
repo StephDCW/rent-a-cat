@@ -45,6 +45,10 @@
   opacity: .5;
 }
 
+.offer-card-actions a {
+  text-decoration: none;
+}
+
 .card {
   width: 200px;
   border-radius: 3px;
@@ -64,4 +68,17 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin-bottom: 20px;
+}
+
+.offer-card-content {
+  inline-size: -webkit-fill-available;
+}
+
+#image-cat {
+    vertical-align: middle;
+    border-style: none;
+    background-position: center;
+    background-size: cover;
+    max-width: 200px;
+    max-height: 200px;
 }
