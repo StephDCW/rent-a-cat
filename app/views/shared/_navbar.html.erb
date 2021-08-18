@@ -15,7 +15,7 @@
           <%= link_to "Home", root_path, class: "nav-link mr-3" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Show my reservation", reservation_path(@reservation), class: "nav-link mr-3 text-bold" if !@reservation.nil? %>
+          <%= link_to "Show my reservation", reservation_path(@reservation), class: "nav-link mr-3 text-bold" if current_user.reservations == true %>
         </li>
         <li class="nav-item active">
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link mr-3 text-bold" %>
