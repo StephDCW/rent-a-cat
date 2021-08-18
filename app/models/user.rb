@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :offers, dependent: :destroy
+  has_many :offers
   has_many :reservations
   has_one_attached :photo
   # Include default devise modules. Others available are:
@@ -8,5 +8,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, uniqueness: true, presence: true
-  validates :first_name, :last_name, :photo, :location, presence: true
+  validates :first_name, :last_name, presence: true
 end
