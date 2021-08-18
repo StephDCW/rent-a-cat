@@ -1,3 +1,18 @@
- <div class="map" style="background-image: url('https://images.unsplash.com/photo-1511044568932-338cba0ad803?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')">
- </div>
-<div>
+<div class="container text-center">
+<div class="card-res-div">
+  <div class="offer-show-card">
+    <div class="show-card-res">
+      <%= cl_image_tag @reservation.offer.photo.key, id: 'image-cat' %>
+    </div>
+    <h1><%= @reservation.offer.name %></h1>
+    <p class="offer-show-address"><%= @reservation.offer.location %></p>
+  </div>
+  <div class="res-show-card">
+  <ul>
+  <li>Pick up date: <%= @reservation.start_date %></li>
+  <li>Return date: <%= @reservation.end_date %></li>
+  <li>Total price: <%= @reservation.total_price %></li>
+  </ul>
+  </div>
+</div>
+</div>
