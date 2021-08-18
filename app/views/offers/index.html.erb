@@ -28,7 +28,7 @@
     <% @offers.each do |offer| %>
       <%# <div class="col-4"> %>
         <div class="offer-card ml-3">
-          <div class="offer-card-image" style="background-image: url('<% offer %>')">
+          <div class="offer-card-image" style="background-image: url('<%= offer.photo %>')">
             <div class="offer-card-content">
               <div class="offer-card-title">
                 <h4><%= offer.name %></h4>
