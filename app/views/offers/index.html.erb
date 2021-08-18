@@ -42,12 +42,16 @@
               <%# </div> %>
               <div class="offer-card-actions">
                 <%= link_to 'More info', offer_path(offer) %>
-                <%= link_to 'Edit', edit_offer_path(offer), class: 'ml-2 text-warning' %>
-                <%= link_to "Remove", offer_path(offer),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" },
-                    class: 'ml-3 text-danger'
-                %>
+                <% if policy(offer).edit? %>
+                  <%= link_to 'Edit', edit_offer_path(offer), class: 'ml-2 text-warning' %>
+                <% end %>
+                <% if policy(offer).destroy? %>
+                  <%= link_to "Remove", offer_path(offer),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" },
+                      class: 'ml-3 text-danger'
+                  %>
+                <% end %>
               </div>
             </div>
           <%# </div> %>
