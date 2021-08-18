@@ -10,11 +10,22 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    @offer = Offer.find(params[:offer_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
+    @reservation.offer = @offer
+    number_of_days = @reservation.end_date - @reservation.start_date
+    @reservation.total_price = @offer.price * number_of_days
+    # 1 - end-date - start date = nb de jours
+    # @offer.price * nb de jours
+    # @reservation.price = truc du dessus
     authorize @reservation
-    flash[:notice] = @reservation.errors.full_messages.to_sentence unless @reservation.save
-    redirect_to offers_path
+    if @reservation.save
+      flash[:notice] = @reservation.errors.full_messages.to_sentence unless @reservation.save
+      redirect_to reservation_path(@reservation)
+    else
+      redirect_to offer_path(@offer)
+    end
   end
 
   def destroy
