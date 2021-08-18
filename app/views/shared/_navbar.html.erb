@@ -12,27 +12,27 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link mr-3" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Show my reservation", reservation_path(@reservation), class: "nav-link" if !@reservation.nil? %>
+          <%= link_to "Show my reservation", reservation_path(@reservation), class: "nav-link mr-3 text-bold" if !@reservation.nil? %>
         </li>
         <li class="nav-item active">
-          <%= link_to "Sign in", new_user_session_path, class: "nav-link" if @current_user.nil? %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" if !@current_user.nil? %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link mr-3 text-bold" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Reservation", reservation_path, class: "nav-link" if !@reservation.nil? %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" if !@current_user.nil? %>
+          <%# <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%#= link_to "Reservation", reservation_path, class: "nav-link" if !@reservation.nil? %>
+            <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
+      <li class="nav-item active">
+          <%= link_to "Home", root_path, class: "nav-link mx-3" %>
+        </li>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link mx-3" %>
         </li>
       <% end %>
     </ul>
