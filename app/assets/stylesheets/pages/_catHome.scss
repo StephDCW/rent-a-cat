@@ -1,0 +1,142 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,700);
+
+.icon {
+	background: #FF750D;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0px;
+	height: 120px;
+	width: 120px;
+	border-radius: 60px;
+}
+
+.card--pseudo .icon {
+	background: transparent;
+}
+
+.card {
+  display: inline-block;
+	background: #FFFFFF;
+  border-radius: 15px;
+	position: relative;
+	height: 250px;
+	width: 210px;
+	margin: 10px;
+	cursor: pointer;
+	overflow: hidden;
+	border: 1px solid transparent;
+}
+.card h3 {
+  z-index: 999;
+}
+
+.icon span{
+	background: #333;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 35px;
+	height: 60px;
+	width: 60px;
+}
+
+.icon .cat {
+	border-radius: 30px;
+	color: #AB4040;
+	line-height: 70px;
+}
+.icon .cat:hover {
+	border-radius: 30px;
+	color: #FFF;
+	line-height: 70px;
+}
+
+.icon .dog {
+	border-radius: 15px 15px 30px 30px;
+	color: #FFF;
+	line-height: 100px;
+}
+
+.cat::before,
+.cat::after,
+.dog::before,
+.dog::after{
+	content: '';
+	display: block;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	height: 0;
+	width: 0;
+	border-left: 10px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 20px #333333 solid;
+}
+
+.cat::before {
+	left: 2px;
+	border-left: 0px solid transparent;
+	border-right: 30px solid transparent;
+}
+
+.cat::after {
+	right: 2px;
+	border-left: 30px solid transparent;
+	border-right: 0 solid transparent;
+}
+
+.dog::before {
+	top: -5px;
+	left: 0px;
+	border-left: 0px solid transparent;
+	border-right: 50px solid transparent;
+}
+
+.dog::after {
+	top: -5px;
+	right: 0px;
+	border-left: 50px solid transparent;
+	border-right: 0 solid transparent;
+}
+
+/* Effect with Box Shadow */
+
+.card--shadow .icon {
+	box-shadow: 0 0 0 0 #FF750D;
+	transition: all .25s ease-in-out;
+	-webkit-transition: all .25s ease-in-out;
+}
+
+.card--shadow:hover .icon {
+	box-shadow: 0 0 0 250px #FF750D;
+}
+
+/* Effect with Pseudo Element */
+
+.card--pseudo::before {
+	content: '';
+	display: block;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 0;
+	width: 0;
+	background: #AB4040;
+	border-radius: 50%;
+	z-index: 0;
+	transition: all .25s ease-in-out;
+	-webkit-transition: all .25s ease-in-out;
+}
+
+.card--pseudo:hover::before {
+	background: #AB4040;
+	border-radius: 0;
+	height: 100%;
+	width: 100%;
+}
