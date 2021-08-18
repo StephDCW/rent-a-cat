@@ -1,4 +1,5 @@
- <div class="map" style="background-image: url('https://images.unsplash.com/photo-1511044568932-338cba0ad803?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')"></div>
+ <div class="map" style="background-image: url('https://images.unsplash.com/photo-1511044568932-338cba0ad803?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')">
+ </div>
 
 <div class="container margin-top-negative">
   <div class="row">
@@ -6,6 +7,7 @@
       <div class="offer-show-card">
         <h1><%= @offer.name %></h1>
         <p class="offer-show-address"><%= @offer.location %></p>
+        <%= cl_image_tag @offer.photo.key, id: 'aks'%>
       </div>
       <div class="offer-show-card">
         <h3>A bit more about <%= @offer.name %> ...</h3>
@@ -16,33 +18,38 @@
     </div>
 
     <div class="col-4">
-      <div class="form-booking bg-light">
+      <div class="form-booking bg-light mb-10 ml-8">
         <%= simple_form_for [ @offer, @reservation ] do |f| %>
           <div class="input-group">
             <%# <span class="input-group-addon" id="basic-addon1">From: </span> %>
-            <%= f.input :start_date, class: "form-control" %>
+            <%= f.input :start_date, class: "form-control pl-5" %>
           </div>
           <div class="input-group mt-2">
             <%# <span class="input-group-addon" id="basic-addon1">To: </span> %>
             <%= f.input :end_date, class:"form-control" %>
           </div>
+          <div class="text-center">
+            <%= f.submit class: 'btn btn-gradient text-white text-center'%><br><br>
+          </div>
 
-            <%= f.submit class: 'btn btn-success text-white'%>
-
+          <h3>Details</h3>
+          <i class="material-icons mr-2">Get</i><span><%= @offer.name %></span>
+          <i class="material-icons mr-2">for <%= @offer.price %> euros</i>
         <% end %>
       </div>
-      <div class="offer-show-card">
-        <h3>Details</h3>
+      <%# <div class="offer-show-card mt-20">
+
         <div class="flex">
           <div class="flex">
-            <i class="material-icons mr-2">Get</i><span><%= @offer.name %></span>
+
           </div>
           <div class="flex ml-3">
-            <i class="material-icons mr-2">for <%= @offer.price %> euros</i>
+
           </div>
+
         </div>
-      </div>
-      <div class="offer-show-card">
+      </div> %>
+      <div class="offer-show-card mt-20">
         <div class="flex-align">
           <h6 class="no-mb">Share</h6>
 
