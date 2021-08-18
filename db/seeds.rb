@@ -8,6 +8,7 @@
 require 'faker'
 require 'open-uri'
 
+Reservation.destroy_all
 Offer.destroy_all
 User.destroy_all
 
