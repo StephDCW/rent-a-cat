@@ -1,4 +1,7 @@
 class OffersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  # skip_before_action(:authenticate_user!, {only: [:index, :show]})
+
   def index
     @offers = policy_scope(Offer).order(created_at: :desc)
     if params[:search]
@@ -10,6 +13,7 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    @reservation = Reservation.new
     authorize @offer
   end
 
