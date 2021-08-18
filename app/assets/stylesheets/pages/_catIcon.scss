@@ -2,13 +2,16 @@
   width: 500px;
   max-width: 100%;
   margin: 0 auto;
+  position: absolute;
+  top: 90px;
+  left: 455px;
 }
 .circle {
   position: relative;
   /*円の横幅*/
-  width: 120px;
+  width: 95px;
   /**円の縦幅*/
-  height: 120px;
+  height: 95px;
   /**角のまるさ*/
   border-radius: 50%;
   background: white; /*背景色*/
