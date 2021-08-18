@@ -40,7 +40,7 @@ end
                   description: Faker::TvShows::MichaelScott.quote,
                   location: 'paris',
                   user_id: User.all.pluck(:id).sample)
-  cat_photo = URI.open("https://cataas.com/cat/says/#{cat.name}")
+  cat_photo = URI.open("https://cataas.com/cat?type=md")
   cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
   puts "creating #{cat.name}!"
   cat.save
@@ -54,7 +54,7 @@ end
                   description: Faker::Movies::BackToTheFuture.quote,
                   location: 'paris',
                   user_id: User.all.pluck(:id).sample)
-  cat_photo = URI.open("https://cataas.com/cat/says/#{cat.name}")
+  cat_photo = URI.open("https://cataas.com/cat?type=md")
   cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
   puts "creating #{cat.name}!"
   cat.save
@@ -68,7 +68,7 @@ end
                       description: Faker::Movies::StarWars.wookiee_sentence,
                       location: 'paris',
                       user_id: User.all.pluck(:id).sample)
-  cat_photo = URI.open("https://cataas.com/cat/says/#{cat.name}")
+  cat_photo = URI.open("https://cataas.com/cat?type=md")
   cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
   puts "creating #{cat.name}!"
   cat.save
@@ -82,7 +82,7 @@ end
                       description: Faker::Movies::HarryPotter.quote,
                       location: 'paris',
                       user_id: User.all.pluck(:id).sample)
-  cat_photo = URI.open("https://cataas.com/cat/says/#{cat.name}")
+  cat_photo = URI.open("https://cataas.com/cat?type=md")
   cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
   puts "creating #{cat.name}!"
   cat.save
