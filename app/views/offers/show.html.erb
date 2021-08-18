@@ -16,20 +16,20 @@
     </div>
 
     <div class="col-4">
-      <div class="offer-show-card">
-        <h5>Book this cat!</h5>
-
-        <form action="">
+      <div class="form-booking bg-light">
+        <%= simple_form_for [ @offer, @reservation ] do |f| %>
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">From: </span>
-            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+            <%# <span class="input-group-addon" id="basic-addon1">From: </span> %>
+            <%= f.input :start_date, class:"form-control" %>
           </div>
           <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">To: </span>
-            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+            <%# <span class="input-group-addon" id="basic-addon1">To: </span> %>
+            <%= f.input :end_date, class:"form-control" %>
           </div>
-          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
-        </form>
+
+            <%= f.submit class: 'btn btn-success text-white'%>
+
+        <% end %>
       </div>
       <div class="offer-show-card">
         <h3>Details</h3>
