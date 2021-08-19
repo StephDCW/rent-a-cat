@@ -6,7 +6,7 @@ class OffersController < ApplicationController
     @offers = policy_scope(Offer).order(created_at: :desc)
 
     if params.dig(:search, :query).present?
-      @offers = @offers.where(location: params.dig(:search, :query))
+      @offers = @offers.search_by_name_and_race_and_location(params.dig(:search, :query))
     end
 
     @markers = @offers.geocoded.map do |offer|
