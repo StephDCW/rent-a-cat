@@ -17,7 +17,7 @@
       <p>You searched for <strong><%= @query %></strong>. We found <%= @offers.count %> offers out of our <%= Offer.count %> on our website.</p>
     <% else %>
       <p>All <%= @offers.count %> offers.  </p>
-      <p><%= link_to "Return to the search", root_path %></p>
+      <p><%= link_to "Return to the search", root_path, class: "btn-gradient" %></p>
     <% end %>
   </div>
 </div>

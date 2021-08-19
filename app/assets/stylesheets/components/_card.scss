@@ -12,6 +12,9 @@
     max-width: 200px;
     max-height: 200px;
 }
+.img-show {
+  width: 100%;
+}
 
 .offer-card-content {
   inline-size: -webkit-fill-available;
@@ -19,6 +22,10 @@
 
 .offer-card-actions a{
   text-decoration: none;
+}
+
+.offer-show-card {
+  text-align: -webkit-center;
 }
 
 .card-trip > img {
