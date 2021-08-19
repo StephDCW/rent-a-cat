@@ -4,10 +4,16 @@ class OffersController < ApplicationController
 
   def index
     @offers = policy_scope(Offer).order(created_at: :desc)
+    @markers = @offers.geocoded.map do |offer|
+      {
+      lat: offer.latitude,
+      lng: offer.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { offer: offer }),
+      image_url: helpers.asset_url('animals-paw.png')
+    }
+    end
     if params[:search]
       @offers = @offers.where(location: params[:search][:query])
-    else
-      @offers
     end
   end
 
@@ -59,6 +65,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:name, :price, :age, :description, :race, :location)
+    params.require(:offer).permit(:name, :price, :age, :description, :race, :location, :latitude, :longitude)
   end
 end

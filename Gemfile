@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'pundit'
 gem 'faker'
+gem 'geocoder'
 
 gem 'cloudinary', '~> 1.16.0'
 
