@@ -12,8 +12,6 @@ class OffersController < ApplicationController
     end
     if params[:search]
       @offers = @offers.where(location: params[:search][:query])
-    else
-      @offers
     end
   end
 
