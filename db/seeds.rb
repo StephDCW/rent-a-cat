@@ -41,7 +41,7 @@ end
                   description: Faker::TvShows::MichaelScott.quote,
                   location: 'paris',
                   user_id: User.all.pluck(:id).sample)
-  cat_photo = URI.open("https://cataas.com/cat?type=md")
+  cat_photo = URI.open("https://cataas.com/cat")
   cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
   puts "creating #{cat.name}!"
   cat.save
@@ -55,7 +55,7 @@ end
                   description: Faker::Movies::BackToTheFuture.quote,
                   location: 'paris',
                   user_id: User.all.pluck(:id).sample)
-  cat_photo = URI.open("https://cataas.com/cat?type=md")
+  cat_photo = URI.open("https://cataas.com/cat")
   cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
   puts "creating #{cat.name}!"
   cat.save
@@ -69,7 +69,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                   description: Faker::Movies::BackToTheFuture.quote,
                   location: '16 villa Gaudelet, Paris',
                   user_id: User.all.pluck(:id).sample)
-  cat_photo = URI.open("https://cataas.com/cat?type=md")
+  cat_photo = URI.open("https://cataas.com/cat")
   cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
   puts "creating #{cat.name}!"
   cat.save
@@ -82,7 +82,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                       description: Faker::Movies::StarWars.wookiee_sentence,
                       location: 'paris',
                       user_id: User.all.pluck(:id).sample)
-  cat_photo = URI.open("https://cataas.com/cat?type=md")
+  cat_photo = URI.open("https://cataas.com/cat")
   cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
   puts "creating #{cat.name}!"
   cat.save
@@ -96,7 +96,7 @@ end
                       description: Faker::Movies::HarryPotter.quote,
                       location: 'paris',
                       user_id: User.all.pluck(:id).sample)
-  cat_photo = URI.open("https://cataas.com/cat?type=md")
+  cat_photo = URI.open("https://cataas.com/cat")
   cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
   puts "creating #{cat.name}!"
   cat.save
