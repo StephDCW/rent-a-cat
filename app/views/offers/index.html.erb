@@ -23,8 +23,8 @@
 </div>
 <div class="card-cat-container d-flex">
   <% @offers.each do |offer| %>
-    <div class="offer-card p-2">
-      <%= cl_image_tag offer.photo.key, id: 'aks' %>
+    <div class="offer-card">
+      <%= cl_image_tag offer.photo.key, class: 'img-index' %>
       <div class="offer-card-content">
         <div class="offer-card-title">
           <h4><%= offer.name %></h4>
