@@ -1,43 +1,41 @@
- <div class="map" style="background-image: url('https://images.unsplash.com/photo-1511044568932-338cba0ad803?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')">
- </div>
 
+<div class="map" style="background-image: url('https://images.unsplash.com/photo-1511044568932-338cba0ad803?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')">
+</div>
 <div class="container margin-top-negative">
   <div class="row">
     <div class="col-8">
       <div class="offer-show-card">
-        <h1><%= @offer.name %></h1>
-        <p class="offer-show-address"><%= @offer.location %></p>
         <%= cl_image_tag @offer.photo.key, class: 'img-show'%>
       </div>
-      <div class="offer-show-card">
+      <div class="offer-show-card px-5 py-4">
+        <h1>This is <%= @offer.name %> <i class=“fas fa-paw”></i></h1>
+        <p class="offer-show-address"><%= @offer.location %></p>
         <h3>A bit more about <%= @offer.name %> ...</h3>
         <p><%= @offer.description %></p>
         <p><%= @offer.name %> is <%= @offer.age %> years old and is an <strong><%= @offer.race %></strong>
-        <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @offer.location %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @offer.location %>&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>
+          <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @offer.location %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @offer.location %>&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>
+        </div>
       </div>
-    </div>
-
-    <div class="col-4">
-      <div class="form-booking bg-light mb-10 ml-8">
-        <%= simple_form_for [ @offer, @reservation ] do |f| %>
-          <div class="input-group">
-            <%# <span class="input-group-addon" id="basic-addon1">From: </span> %>
-            <%= f.input :start_date, class: "form-control pl-5" %>
-          </div>
-          <div class="input-group mt-2">
-            <%# <span class="input-group-addon" id="basic-addon1">To: </span> %>
-            <%= f.input :end_date, class:"form-control" %>
-          </div>
-          <div class="text-center">
-            <%= f.submit class: 'btn btn-gradient text-white text-center'%><br><br>
-          </div>
-
-          <h3>Details</h3>
-          <i class="material-icons mr-2">Get</i><span><%= @offer.name %></span>
-          <i class="material-icons mr-2">for <%= @offer.price %> euros</i>
-        <% end %>
-      </div>
-      <%# <div class="offer-show-card mt-20">
+      <div class="col-4">
+        <div class="form-booking bg-light mb-10 ml-8">
+          <%= simple_form_for [ @offer, @reservation ] do |f| %>
+            <div class="input-group">
+              <%# <span class="input-group-addon" id="basic-addon1">From: </span> %>
+              <%= f.input :start_date, class: "form-control pl-5" %>
+            </div>
+            <div class="input-group mt-2">
+              <%# <span class="input-group-addon" id="basic-addon1">To: </span> %>
+              <%= f.input :end_date, class:"form-control" %>
+            </div>
+            <div class="text-center">
+              <%= f.submit class: 'btn btn-gradient text-white text-center back-btn'%><br>
+              <br>
+            </div>
+            <h4 class="text-center"><%= @offer.price %>$ per day</h4>
+            <span></span>
+          <% end %>
+        </div>
+        <%# <div class="offer-show-card mt-20">
 
         <div class="flex">
           <div class="flex">
@@ -49,20 +47,20 @@
 
         </div>
       </div> %>
-      <div class="offer-show-card mt-20">
-        <div class="flex-align">
-          <h6 class="no-mb">Share</h6>
-
-          <div class="flex">
-            <i class="fa fa-facebook-square fa"></i>
-            <i class="fa fa-twitter-square fa"></i>
-            <i class="fa fa-github-square fa"></i>
-            <i class="fa fa-envelope-square fa"></i>
+        <div class="offer-show-card mt-20 p-3">
+          <div class="flex-align">
+            <h6 class="no-mb">Share</h6>
+            <div class="flex">
+              <i class="fa fa-facebook-square fa"></i>
+              <i class="fa fa-twitter-square fa"></i>
+              <i class="fa fa-github-square fa"></i>
+              <i class="fa fa-envelope-square fa"></i>
+            </div>
           </div>
         </div>
+        <div class="text-center">
+          <%= link_to "Return to the list", offers_path, class: "btn btn-gradient back-btn" %>
+        </div>
       </div>
-      <%= link_to "Return to the list", offers_path %>
     </div>
   </div>
-
-</div>
