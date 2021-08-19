@@ -1,0 +1,5 @@
+<%= simple_form_for @reservation do |o| %>
+  <%= o.input :start_date, html5: true, placeholder: "Write the starting date here" %>
+  <%= o.input :end_date, html5: true, placeholder: "Write the ending date here" %>
+  <%= o.submit "Edit", class: "btn-gradient w-100" %>
+<% end %>

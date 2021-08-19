@@ -13,6 +13,8 @@ li {
 .container-wrap{
   min-height: 100vh;
   display:flex;
+  flex-direction: column;
+  margin-top: 10vh;
   align-items: center;
   justify-content: center;
 }

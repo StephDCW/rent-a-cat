@@ -1,0 +1,16 @@
+<div class="container-wrap">
+  <% @reservations.each do |reservation| %>
+    <div class="card-product">
+     <%= cl_image_tag reservation.offer.photo.key, id: 'image-cat' %>
+      <div class="card-product-infos">
+        <h2>Reservation <%= reservation.id%> </h2>
+        <p>You have adopt <span class="red"><%= reservation.offer.name %></span><strong> for <%=(reservation.end_date - reservation.start_date).to_i %></strong>.</p>
+        <%= link_to "Delete", reservation_path(reservation),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" },
+                      class: 'ml-3 text-danger'
+                  %>
+      </div>
+    </div>
+  <% end %>
+</div>
