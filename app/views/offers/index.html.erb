@@ -5,35 +5,31 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 </div>
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>All our Cats</h1>
-    </div>
-  </div>
-</div>
 <div class="">
   <div class="col d-flex justify-content-between">
-    <% if @query %>
-      <p>You searched for <strong><%= @query %></strong>. We found <%= @offers.count %> offers out of our <%= Offer.count %> on our website.</p>
+    <% if @offers %>
+      <p>We found <%= @offers.count %> offers out of our <%= Offer.count %> on our website.</p>
     <% else %>
       <p>All <%= @offers.count %> offers.  </p>
       <p><%= link_to "Return to the search", root_path, class: "btn-gradient" %></p>
     <% end %>
   </div>
 </div>
-
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 <div class="card-cat-container d-flex">
   <% @offers.each do |offer| %>
     <div class="offer-card">
       <%= cl_image_tag offer.photo.key, class: 'img-index' %>
       <div class="offer-card-content">
-        <div class="offer-card-title">
+        <div class="offer-card-title text-center">
           <h4><%= offer.name %></h4>
-        </div>
-        <p><%= offer.location %></p>
-        <div class="flex ml-3">
-          <i class="material-icons mr-2"><%= offer.price %> euros</i>
+        <p>
+          <%= offer.location %><hr>
+          <%= offer.price %>$ per day
+        </p>
         </div>
         <div class="offer-card-actions">
           <%= link_to 'More info', offer_path(offer) %>
@@ -46,9 +42,9 @@
                       data: { confirm: "Are you sure?" },
                       class: 'ml-3 text-danger'
                   %>
-                <% end %>
-              </div>
-          </div>
+          <% end %>
         </div>
+      </div>
+    </div>
   <% end %>
 </div>
