@@ -4,10 +4,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-#aks {
+.img-index {
     vertical-align: middle;
     border-style: none;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     max-width: 200px;
     max-height: 200px;
@@ -20,7 +20,6 @@
 .offer-card-actions a{
   text-decoration: none;
 }
-
 
 .card-trip > img {
   height: 200px;
