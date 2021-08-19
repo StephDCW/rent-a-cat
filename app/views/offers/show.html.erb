@@ -7,7 +7,7 @@
       <div class="offer-show-card">
         <h1><%= @offer.name %></h1>
         <p class="offer-show-address"><%= @offer.location %></p>
-        <%= cl_image_tag @offer.photo.key, id: 'aks'%>
+        <%= cl_image_tag @offer.photo.key, class: 'img-show'%>
       </div>
       <div class="offer-show-card">
         <h3>A bit more about <%= @offer.name %> ...</h3>
