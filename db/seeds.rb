@@ -61,6 +61,19 @@ end
   cat.save
 end
 
+
+cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
+                  age: rand(0..25),
+                  price: rand(2..200),
+                  race: Faker::Creature::Cat.breed,
+                  description: Faker::Movies::BackToTheFuture.quote,
+                  location: '16 villa Gaudelet, Paris',
+                  user_id: User.all.pluck(:id).sample)
+  cat_photo = URI.open("https://cataas.com/cat?type=md")
+  cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
+  puts "creating #{cat.name}!"
+  cat.save
+
 5.times do
   cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
                       age: rand(0..25),
