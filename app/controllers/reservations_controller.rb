@@ -1,4 +1,8 @@
 class ReservationsController < ApplicationController
+  def index
+    @reservations = policy_scope(Reservation)
+  end
+
   def show
     @reservation = Reservation.find(params[:id])
     authorize @reservation
@@ -32,7 +36,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     authorize @reservation
     @reservation.destroy
-    redirect_to offers_path
+    redirect_to reservations_path
   end
 
   def edit
@@ -44,7 +48,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     authorize @reservation
     @reservation.update(reservation_params)
-    redirect_to offers_path
+    redirect_to reservations_path
   end
 
   def reservation_params

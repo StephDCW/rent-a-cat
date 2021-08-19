@@ -1,9 +1,12 @@
 class ReservationPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
+    # def index?
+    #   record.user == user
+    # end
 
   def show?
     return true
@@ -11,6 +14,10 @@ class ReservationPolicy < ApplicationPolicy
 
   def create?
     return true
+  end
+
+  def edit?
+    record.user == user
   end
 
   def update?
