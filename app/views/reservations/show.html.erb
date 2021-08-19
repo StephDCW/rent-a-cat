@@ -1,18 +1,18 @@
-<div class="container text-center">
-<div class="card-res-div">
-  <div class="offer-show-card">
-    <div class="show-card-res">
-      <%= cl_image_tag @reservation.offer.photo.key, id: 'image-cat' %>
+
+ <div class="containe-wrapper">
+  <div class="container text-center">
+    <div class="card-res-div">
+      <div class="offer-show-card">
+        <div class="show-card-res">
+          <%= cl_image_tag @reservation.offer.photo.key, id: 'image-cat' %>
+        </div>
+        <strong><i class="fas fa-paw"></i> <%= @reservation.offer.name %> <i class="fas fa-paw"></i></strong>
+      </div>
+      <div class="res-show-card">
+          <h3>Congratulations!!!!!!</h3>
+          <p>You gonna spend <%=(@reservation.end_date - @reservation.start_date).to_i%> days with <strong><span class="red"><%= @reservation.offer.name %></span></strong> </p>
+          <p>Thanks so much for your <%= @reservation.total_price %> <i class="fas fa-euro-sign"></i></p>
+      </div>
     </div>
-    <h1><%= @reservation.offer.name %></h1>
-    <p class="offer-show-address"><%= @reservation.offer.location %></p>
   </div>
-  <div class="res-show-card">
-  <ul>
-  <li>Pick up date: <%= @reservation.start_date %></li>
-  <li>Return date: <%= @reservation.end_date %></li>
-  <li>Total price: <%= @reservation.total_price %></li>
-  </ul>
-  </div>
-</div>
-</div>
+ </div>
