@@ -4,6 +4,12 @@ class OffersController < ApplicationController
 
   def index
     @offers = policy_scope(Offer).order(created_at: :desc)
+    @markers = @offers.geocoded.map do |offer|
+    {
+      lat: offer.latitude,
+      lng: offer.longitude
+    }
+    end
     if params[:search]
       @offers = @offers.where(location: params[:search][:query])
     else
