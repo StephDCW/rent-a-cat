@@ -11,6 +11,7 @@
     <div class="card-cat-container">
       <div class="offer-cards">
         <% @offers.each do |offer| %>
+            <%= link_to offer_path(offer) do %>
             <div class="offer-card">
               <%= cl_image_tag offer.photo.key, class: 'img-index' %>
               <div class="offer-card-content">
@@ -22,9 +23,8 @@
                 </p>
                 </div>
                 <div class="offer-card-actions">
-                  <%= link_to 'More info', offer_path(offer) %>
                   <% if policy(offer).edit? %>
-                    <%= link_to 'Edit', edit_offer_path(offer), class: 'ml-2 text-warning' %>
+                    <%= link_to 'Edit', edit_offer_path(offer), class: 'ml-2 text-white bg-warning' %>
                   <% end %>
                   <% if policy(offer).destroy? %>
                     <%= link_to "Remove", offer_path(offer),
@@ -36,6 +36,7 @@
                 </div>
               </div>
             </div>
+            <% end %>
           <% end %>
       </div>
       <div id="map" class="map py-0"
