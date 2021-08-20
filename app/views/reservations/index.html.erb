@@ -4,7 +4,8 @@
      <%= cl_image_tag reservation.offer.photo.key, id: 'image-cat' %>
       <div class="card-product-infos">
         <h2>Reservation <%= reservation.id%> </h2>
-        <p>You have adopt <span class="red"><%= reservation.offer.name %></span><strong> for <%=(reservation.end_date - reservation.start_date).to_i %></strong>.</p>
+        <p>You are going to enjoy <span class="red"><%= reservation.offer.name %></span> for<strong> <%=(reservation.end_date - reservation.start_date).to_i %></strong> days.</p>
+        <%= link_to 'Edit', edit_reservation_path(reservation), class: 'ml-2 text-warning' %>
         <%= link_to "Delete", reservation_path(reservation),
                       method: :delete,
                       data: { confirm: "Are you sure?" },

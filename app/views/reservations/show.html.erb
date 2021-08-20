@@ -10,10 +10,9 @@
       </div>
       <div class="res-show-card">
           <h3>Congratulations!!!!!!</h3>
-          <p>You gonna spend <%=(@reservation.end_date - @reservation.start_date).to_i%> days with <strong><span class="red"><%= @reservation.offer.name %></span></strong> </p>
-          <p>Thanks so much for your <%= @reservation.total_price %> <i class="fas fa-euro-sign"></i></p>
-          <%= link_to 'my reservations', reservations_path, class: 'ml-2 text-warning' %>
-           <%= link_to 'Edit', edit_reservation_path(@reservation), class: 'ml-2 text-warning' %>
+          <p>You are going to spend <%=(@reservation.end_date - @reservation.start_date).to_i%> lovely days with <strong><span class="red"><%= @reservation.offer.name %></span></strong> </p>
+          <p>Your total price is <%= @reservation.total_price %> <i class="fas fa-euro-sign"></i></p>
+          <%= link_to 'My reservations', reservations_path, class: 'ml-2 text-warning' %>
         <%= link_to "Back", offers_path %>
       </div>
       <div>
