@@ -15,6 +15,9 @@
 .card--pseudo .icon {
 	background: transparent;
 }
+.cards {
+  padding: 25px;
+}
 
 .card {
   display: inline-block;
@@ -29,7 +32,7 @@
 	border: 1px solid transparent;
 }
 .card h3 {
-  z-index: 999;
+  opacity: 0.9;
 }
 
 .icon span{
