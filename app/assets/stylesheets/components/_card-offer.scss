@@ -11,6 +11,11 @@
   display: flex !important;
   flex-wrap: wrap;
 }
+.offer-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
 
 .offer-card {
   width: 455px;
@@ -20,7 +25,8 @@
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
   overflow: hidden;
   height: 200px;
-  display:flex;
+  display: flex;
+  // display:flex;
   box-shadow: 3px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   // margin: 15px;

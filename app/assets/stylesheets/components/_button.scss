@@ -53,3 +53,16 @@
   background: linear-gradient(#7d2e2e, #a22828);
   color: white;
 }
+
+.button-learn {
+  background-color: #4B878BFF;
+  color: white;
+  border-radius: 4px;
+  padding: 5px 2px;
+  border: 1px solid #4B878BFF;
+
+  &:hover {
+  background: linear-gradient(#7d2e2e, #a22828);
+  color: white;
+  }
+}
