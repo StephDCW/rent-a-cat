@@ -12,7 +12,7 @@
           <%= link_to "Home", root_path, class: "nav-link mr-3" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Show my reservation", reservations_path(@reservation), class: "nav-link mr-3 text-bold" if current_user.reservations == true %>
+          <%= link_to "Show my reservations", reservations_path(@reservation), class: "nav-link mr-3 text-bold" if current_user.reservations %>
         </li>
         <li class="nav-item active">
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link mr-3 text-bold" %>
