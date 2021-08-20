@@ -24,7 +24,7 @@
                 <div class="offer-card-actions">
                   <%= link_to 'More info', offer_path(offer) %>
                   <% if policy(offer).edit? %>
-                    <%= link_to 'Edit', edit_offer_path(offer), class: 'ml-2 text-warning' %>
+                    <%= link_to 'Edit', edit_offer_path(offer), class: 'ml-2 text-white bg-warning' %>
                   <% end %>
                   <% if policy(offer).destroy? %>
                     <%= link_to "Remove", offer_path(offer),
