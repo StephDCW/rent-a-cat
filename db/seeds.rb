@@ -1,5 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# The data can then be loaded with the rails db:seed command (or new alongside the database with db:setup).
 #
 # Examples:
 #
@@ -20,7 +20,7 @@ user_test = User.new(email: "test@test.com",
                      last_name: Faker::Name.last_name)
 user_test.photo.attach(io: user_test_photo, filename: 'test.jpg', content_type: 'image/jpg')
 puts "user test created"
-user_test.save
+user_test.save!
 
 10.times do
   user = User.new(email: Faker::Internet.unique.email,
@@ -30,7 +30,7 @@ user_test.save
   user_photo = URI.open("https://i.pravatar.cc/150?u=#{user.email}")
   user.photo.attach(io: user_photo, filename: "#{user.first_name}_#{user.last_name}_photo.jpeg", content_type: 'image/jpeg')
   puts "creating user : #{user.first_name}..."
-  user.save
+  user.save!
 end
 
 cat = Offer.new(name: Faker::Creature::Cat.unique.name,
@@ -43,7 +43,7 @@ cat = Offer.new(name: Faker::Creature::Cat.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Creature::Cat.unique.name,
                 age: rand(0..25),
@@ -55,7 +55,7 @@ cat = Offer.new(name: Faker::Creature::Cat.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Creature::Cat.unique.name,
                 age: rand(0..25),
@@ -67,7 +67,7 @@ cat = Offer.new(name: Faker::Creature::Cat.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Creature::Cat.unique.name,
                 age: rand(0..25),
@@ -79,7 +79,7 @@ cat = Offer.new(name: Faker::Creature::Cat.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Creature::Cat.unique.name,
                 age: rand(0..25),
@@ -91,7 +91,7 @@ cat = Offer.new(name: Faker::Creature::Cat.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Creature::Cat.unique.name,
                 age: rand(0..25),
@@ -103,7 +103,7 @@ cat = Offer.new(name: Faker::Creature::Cat.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -115,7 +115,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -127,7 +127,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -139,7 +139,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -151,7 +151,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -163,7 +163,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -175,7 +175,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -187,7 +187,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
@@ -199,7 +199,7 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
@@ -211,7 +211,7 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
@@ -223,7 +223,7 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
@@ -235,7 +235,7 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
@@ -247,7 +247,7 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
@@ -259,7 +259,7 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Creature::Cat.unique.name,
                 age: rand(0..25),
@@ -271,7 +271,7 @@ cat = Offer.new(name: Faker::Creature::Cat.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Creature::Cat.unique.name,
                 age: rand(0..25),
@@ -283,20 +283,7 @@ cat = Offer.new(name: Faker::Creature::Cat.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
-
-cat = Offer.new(name: Faker::Creature::Cat.unique.name,
-                age: rand(0..25),
-                price: rand(2..200),
-                race: Faker::Creature::Cat.breed,
-                description: Faker::TvShows::MichaelScott.quote,
-                location: '14 Quai de la Loire, 75019 Paris',
-                user_id: User.all.pluck(:id).sample)
-
-cat_photo = URI.open("https://cataas.com/cat?type=md")
-cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
-puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Creature::Cat.unique.name,
                 age: rand(0..25),
@@ -308,7 +295,7 @@ cat = Offer.new(name: Faker::Creature::Cat.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Creature::Cat.unique.name,
                 age: rand(0..25),
@@ -320,7 +307,7 @@ cat = Offer.new(name: Faker::Creature::Cat.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Creature::Cat.unique.name,
                 age: rand(0..25),
@@ -332,7 +319,7 @@ cat = Offer.new(name: Faker::Creature::Cat.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -344,7 +331,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -356,7 +343,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -368,7 +355,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -380,7 +367,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -392,7 +379,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -404,7 +391,7 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
 cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
                 age: rand(0..25),
@@ -416,9 +403,9 @@ cat = Offer.new(name: Faker::Games::SuperSmashBros.unique.fighter,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
-cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
+cat = Offer.new(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
                     price: rand(2..200),
                     race: Faker::Creature::Cat.breed,
@@ -428,9 +415,9 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
-cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
+cat = Offer.new(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
                     price: rand(2..200),
                     race: Faker::Creature::Cat.breed,
@@ -440,9 +427,9 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
-cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
+cat = Offer.new(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
                     price: rand(2..200),
                     race: Faker::Creature::Cat.breed,
@@ -452,9 +439,9 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
-cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
+cat = Offer.new(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
                     price: rand(2..200),
                     race: Faker::Creature::Cat.breed,
@@ -464,9 +451,9 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
-cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
+cat = Offer.new(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
                     price: rand(2..200),
                     race: Faker::Creature::Cat.breed,
@@ -476,9 +463,9 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
-cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
+cat = Offer.new(name: Faker::Games::Pokemon.unique.name,
                     age: rand(0..25),
                     price: rand(2..200),
                     race: Faker::Creature::Cat.breed,
@@ -488,9 +475,9 @@ cat = Offer.create!(name: Faker::Games::Pokemon.unique.name,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
-cat = Offer.create!(name: Faker::Movies::StarWars.unique.specie,
+cat = Offer.new(name: Faker::Movies::StarWars.unique.specie,
                     age: rand(0..25),
                     price: rand(2..200),
                     race: Faker::Creature::Cat.breed,
@@ -500,9 +487,9 @@ cat = Offer.create!(name: Faker::Movies::StarWars.unique.specie,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
-cat = Offer.create!(name: Faker::Movies::StarWars.unique.specie,
+cat = Offer.new(name: Faker::Movies::StarWars.unique.specie,
                     age: rand(0..25),
                     price: rand(2..200),
                     race: Faker::Creature::Cat.breed,
@@ -512,9 +499,9 @@ cat = Offer.create!(name: Faker::Movies::StarWars.unique.specie,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
-cat = Offer.create!(name: Faker::Movies::StarWars.unique.specie,
+cat = Offer.new(name: Faker::Movies::StarWars.unique.specie,
                     age: rand(0..25),
                     price: rand(2..200),
                     race: Faker::Creature::Cat.breed,
@@ -524,9 +511,9 @@ cat = Offer.create!(name: Faker::Movies::StarWars.unique.specie,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
-cat = Offer.create!(name: Faker::Movies::StarWars.unique.specie,
+cat = Offer.new(name: Faker::Movies::StarWars.unique.specie,
                     age: rand(0..25),
                     price: rand(2..200),
                     race: Faker::Creature::Cat.breed,
@@ -536,9 +523,9 @@ cat = Offer.create!(name: Faker::Movies::StarWars.unique.specie,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
 
-cat = Offer.create!(name: Faker::Movies::StarWars.unique.specie,
+cat = Offer.new(name: Faker::Movies::StarWars.unique.specie,
                     age: rand(0..25),
                     price: rand(2..200),
                     race: Faker::Creature::Cat.breed,
@@ -548,4 +535,4 @@ cat = Offer.create!(name: Faker::Movies::StarWars.unique.specie,
 cat_photo = URI.open("https://cataas.com/cat?type=md")
 cat.photo.attach(io: cat_photo, filename: "#{cat.name}_photo.jpeg", content_type: "image/jpeg")
 puts "creating #{cat.name}!"
-cat.save
+cat.save!
