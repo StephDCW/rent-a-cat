@@ -7,21 +7,31 @@
 .img-index {
     vertical-align: middle;
     border-style: none;
-    background-position: center;
-    background-size: cover;
-    max-width: 200px;
-    max-height: 200px;
+    // background-position: center;
+    // background-size: cover;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    // max-width: 200px;
+    // max-height: 200px;
 }
 .img-show {
   width: 100%;
 }
 
 .offer-card-content {
+  padding: 10px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(160,160,160,0.2);
   inline-size: -webkit-fill-available;
 }
 
 .offer-card-actions a{
   text-decoration: none;
+}
+
+.offer-card-actions {
+  text-align: -webkit-center;
 }
 
 .offer-show-card {
