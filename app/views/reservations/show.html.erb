@@ -12,8 +12,8 @@
           <h3>Congratulations!!!!!!</h3>
           <p>You are going to spend <%=(@reservation.end_date - @reservation.start_date).to_i%> lovely days with <strong><span class="red"><%= @reservation.offer.name %></span></strong> </p>
           <p>Your total price is <%= @reservation.total_price %> <i class="fas fa-euro-sign"></i></p>
-          <%= link_to 'My reservations', reservations_path, class: 'ml-2 text-warning' %>
-        <%= link_to "Back", offers_path %>
+          <%= link_to 'My reservations', reservations_path, class: 'text-white bg-warning rounded px-2' %>
+        <%= link_to "Back", offers_path, class: 'text-white bg-primary rounded px-2' %>
       </div>
       <div>
 

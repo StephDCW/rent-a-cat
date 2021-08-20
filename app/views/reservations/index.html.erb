@@ -5,11 +5,11 @@
       <div class="card-product-infos">
         <h2 class="text-left">Reservation <%= reservation.id%> </h2>
         <p>You are going to enjoy <span class="red"><%= reservation.offer.name %></span> for<strong> <%=(reservation.end_date - reservation.start_date).to_i %></strong> days.</p>
-        <%= link_to 'Edit', edit_reservation_path(reservation), class: 'ml-2 text-warning' %>
+        <%= link_to 'Edit', edit_reservation_path(reservation), class: 'text-white btn-warning btn-standard rounded' %>
         <%= link_to "Delete", reservation_path(reservation),
                       method: :delete,
                       data: { confirm: "Are you sure?" },
-                      class: 'ml-3 text-danger'
+                      class: 'ml-3 text-white btn-danger rounded btn-standard text-center'
                   %>
       </div>
     </div>
