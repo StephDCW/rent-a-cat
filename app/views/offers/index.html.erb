@@ -24,7 +24,7 @@
         </p>
         </div>
         <div class="offer-card-actions">
-          <%= link_to 'Learn about me', offer_path(offer) %>
+          <%#= link_to 'More', offer_path(offer), class:'button-learn' %>
           <% if policy(offer).edit? %>
             <%= link_to 'Edit', edit_offer_path(offer), class: 'ml-2 text-warning' %>
           <% end %>
